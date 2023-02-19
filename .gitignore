@@ -1,0 +1,19 @@
+*.yaml
+*.yml
+entrypoint.sh
+odoo-16-custom-debug.dockerfile
+wait-for-psql.py
+*.conf
+.env
+.DS_Store
+
+# /addons
+# addons/
+__pycache__/
+/__pycache__
+/config
+config/
+/odoo-db-data
+odoo-db-data/
+odoo-web-data/
+/odoo-web-data

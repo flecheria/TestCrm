@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <data noupdate="1">
+        <!-- Mercato Italiano -->
+        <record id="stage_it_contact" model="crm.stage">
+            <field name="name">Contatto Acquisito</field>
+            <field name="team_id" ref="salesteam_it"></field>
+        </record>
+        <record id="stage_it_secondmeeting" model="crm.stage">
+            <field name="name">Secondo Meeting</field>
+            <field name="team_id" ref="salesteam_it"></field>
+        </record>
+        <record id="stage_it_oppprop" model="crm.stage">
+            <field name="name">Opportunita Proposta</field>
+            <field name="team_id" ref="salesteam_it"></field>
+        </record>
+        <record id="stage_it_oppwon" model="crm.stage">
+            <field name="name">Opportunita Vinta</field>
+            <field name="team_id" ref="salesteam_it"></field>
+        </record>
+        <record id="stage_it_opplost" model="crm.stage">
+            <field name="name">Opportunita Persa</field>
+            <field name="team_id" ref="salesteam_it"></field>
+        </record>
+
+        <!-- Mercato Americano -->
+        <record id="stage_us_contact" model="crm.stage">
+            <field name="name">Contatto Acquisito</field>
+            <field name="team_id" ref="salesteam_us"></field>
+        </record>
+        <record id="stage_us_qualified" model="crm.stage">
+            <field name="name">Contatto Qualificato</field>
+            <field name="team_id" ref="salesteam_us"></field>
+        </record>
+        <record id="stage_us_firstmeeting" model="crm.stage">
+            <field name="name">Primo Meeting</field>
+            <field name="team_id" ref="salesteam_us"></field>
+        </record>
+        <record id="stage_us_secondmeeting" model="crm.stage">
+            <field name="name">Secondo Meeting</field>
+            <field name="team_id" ref="salesteam_us"></field>
+        </record>
+        <record id="stage_us_evaluation" model="crm.stage">
+            <field name="name">Valutazione Caso Business</field>
+            <field name="team_id" ref="salesteam_us"></field>
+        </record>
+        <record id="stage_us_oppwon" model="crm.stage">
+            <field name="name">Opportunita Vinta</field>
+            <field name="team_id" ref="salesteam_us"></field>
+        </record>
+        <record id="stage_us_opplost" model="crm.stage">
+            <field name="name">Opportunita Persa</field>
+            <field name="team_id" ref="salesteam_us"></field>
+        </record>
+    </data>
+    
+</odoo>

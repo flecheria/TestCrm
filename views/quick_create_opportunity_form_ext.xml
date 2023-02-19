@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="crmtest_quick_create_opportunity_ext" model="ir.ui.view">
+            <field name="name">crmtest.quick.create.opportunity.ext</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.quick_create_opportunity_form"></field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="market_id" widget="many2one" />
+                    <field name="lead_company_id" widget="many2one" />
+                    <!-- <field name="product_ids" widget="many2many">
+                        <tree editable="bottom">
+                            <field name="name"></field>
+                            <field name="description"></field>
+                        </tree>
+                    </field> -->
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

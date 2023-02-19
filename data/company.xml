@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="company_test1" model="res.company">
+            <field name="name">Fantasia 2</field>
+            <!-- <field name="country_id">IT</field> -->
+        </record>
+        <record id="company_test2" model="res.company">
+            <field name="name">Bianca Casa</field>
+            <!-- <field name="country_id" ref="country_ar"></field> -->
+            <!-- <field name="country_id" relation="res.country" domain="[('code', '=', 'AR')]"></field> -->
+        </record>
+
+    </data>
+</odoo>
