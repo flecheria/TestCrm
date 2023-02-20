@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="crmtest_view_form_ext" model="ir.ui.view">
+            <field name="name">crmtest.view.form.ext</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"></field>
+            <field name="arch" type="xml">
+
+                <notebook position="inside">
+                    <page name="crmtest_neworder" string="Potenziale Ordine">
+                        <!-- TODO TO BE SOLVED THE NULL PROBLEM -->
+                        <!-- <field name="order_line_ids" widget="one2many">
+                            <tree>
+                                <field name="product_id" />
+                                <field name="description" />
+                            </tree>
+                        </field> -->
+                    </page>
+                </notebook>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

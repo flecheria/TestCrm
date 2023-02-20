@@ -9,12 +9,9 @@
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="market_id" widget="many2one" />
                     <field name="lead_company_id" widget="many2one" />
-                    <!-- <field name="product_ids" widget="many2many">
-                        <tree editable="bottom">
-                            <field name="name"></field>
-                            <field name="description"></field>
-                        </tree>
-                    </field> -->
+                    <!-- TODO this raise error when tree is added to the field -->
+                    <field name="product_ids" widget="many2many">
+                    </field>
                 </xpath>
             </field>
         </record>

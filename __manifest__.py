@@ -28,12 +28,12 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'data/company.xml', 
         'data/salesteam.xml', 
         'data/stages.xml',
-        'views/quick_create_opportunity_form_ext.xml'
-        # 'views/templates.xml',
+        'views/quick_create_opportunity_form_ext.xml', 
+        'views/crm_lead_view_form_ext.xml'
     ],
 
     # only loaded in demonstration mode

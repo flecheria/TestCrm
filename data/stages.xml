@@ -23,7 +23,9 @@
             <field name="name">Opportunita Persa</field>
             <field name="team_id" ref="salesteam_it"></field>
         </record>
-
+    </data>
+    
+    <data noupdate="1">
         <!-- Mercato Americano -->
         <record id="stage_us_contact" model="crm.stage">
             <field name="name">Contatto Acquisito</field>
