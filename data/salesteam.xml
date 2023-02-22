@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data noupdate="1">
+    <data noupdate="0">
         <record id="salesteam_it" model="crm.team">
             <field name="name">MercatoItaliano</field>
             <field name="use_quotations">False</field>
             <field name="use_opportunities">True</field>
+            <field name="company_id" eval="False"/>
         </record>
-    </data>
 
-    <data noupdate="1">
         <record id="salesteam_us" model="crm.team">
             <field name="name">StatiUnitiArgentina</field>
             <field name="use_quotations">False</field>
             <field name="use_opportunities">True</field>
+            <field name="company_id" eval="False"/>
         </record>
     </data>
 </odoo>

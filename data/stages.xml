@@ -1,60 +1,109 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
-    <data noupdate="1">
+    <data noupdate="0">
         <!-- Mercato Italiano -->
-        <record id="stage_it_contact" model="crm.stage">
-            <field name="name">Contatto Acquisito</field>
-            <field name="team_id" ref="salesteam_it"></field>
+        <function model="ir.model.data" name="write">
+            <value model="ir.model.data" search="[('module', '=', 'crm'), ('name', '=', 'stage_lead1')]"/>
+            <value eval="{'noupdate': False}"/>
+        </function>
+        <function model="ir.model.data" name="write">
+            <value model="ir.model.data" search="[('module', '=', 'crm'), ('name', '=', 'stage_lead2')]"/>
+            <value eval="{'noupdate': False}"/>
+        </function>
+        <function model="ir.model.data" name="write">
+            <value model="ir.model.data" search="[('module', '=', 'crm'), ('name', '=', 'stage_lead3')]"/>
+            <value eval="{'noupdate': False}"/>
+        </function>
+        <function model="ir.model.data" name="write">
+            <value model="ir.model.data" search="[('module', '=', 'crm'), ('name', '=', 'stage_lead4')]"/>
+            <value eval="{'noupdate': False}"/>
+        </function>
+        
+        <record model="crm.stage" id="crm.stage_lead1">
+            <field name="name">Contact Acquired</field>
+            <field name="team_id" ref="salesteam_it"/>
+            <field name="sequence">1</field>
         </record>
-        <record id="stage_it_secondmeeting" model="crm.stage">
-            <field name="name">Secondo Meeting</field>
-            <field name="team_id" ref="salesteam_it"></field>
+        <record model="crm.stage" id="crm.stage_lead2">
+            <field name="name">Second Meeting</field>
+            <field name="team_id" ref="salesteam_it"/>
+            <field name="sequence">2</field>
         </record>
-        <record id="stage_it_oppprop" model="crm.stage">
-            <field name="name">Opportunita Proposta</field>
-            <field name="team_id" ref="salesteam_it"></field>
+        <record model="crm.stage" id="crm.stage_lead3">
+            <field name="name">Opportunity Proposed</field>
+            <field name="team_id" ref="salesteam_it"/>
+            <field name="sequence">3</field>
         </record>
-        <record id="stage_it_oppwon" model="crm.stage">
-            <field name="name">Opportunita Vinta</field>
-            <field name="team_id" ref="salesteam_it"></field>
+        <record model="crm.stage" id="crm.stage_lead4">
+            <field name="name">Opportunity Won</field>
+            <field name="team_id" ref="salesteam_it"/>
+            <field name="sequence">4</field>
         </record>
-        <record id="stage_it_opplost" model="crm.stage">
-            <field name="name">Opportunita Persa</field>
-            <field name="team_id" ref="salesteam_it"></field>
+        
+        <function model="ir.model.data" name="write">
+            <value model="ir.model.data" search="[('module', '=', 'crm'), ('name', '=', 'stage_lead1')]"/>
+            <value eval="{'noupdate': True}"/>
+        </function>
+        <function model="ir.model.data" name="write">
+            <value model="ir.model.data" search="[('module', '=', 'crm'), ('name', '=', 'stage_lead2')]"/>
+            <value eval="{'noupdate': True}"/>
+        </function>
+        <function model="ir.model.data" name="write">
+            <value model="ir.model.data" search="[('module', '=', 'crm'), ('name', '=', 'stage_lead3')]"/>
+            <value eval="{'noupdate': True}"/>
+        </function>
+        <function model="ir.model.data" name="write">
+            <value model="ir.model.data" search="[('module', '=', 'crm'), ('name', '=', 'stage_lead4')]"/>
+            <value eval="{'noupdate': True}"/>
+        </function>
+        
+        <record id="stage_it_stage_5" model="crm.stage">
+            <field name="name">Opportunity Lost</field>
+            <field name="team_id" ref="salesteam_it"/>
+            <field name="sequence">5</field>
         </record>
-    </data>
-    
-    <data noupdate="1">
+        <!-- Mercato Italiano -->
+        
         <!-- Mercato Americano -->
-        <record id="stage_us_contact" model="crm.stage">
-            <field name="name">Contatto Acquisito</field>
-            <field name="team_id" ref="salesteam_us"></field>
+        <record id="stage_us_stage_1" model="crm.stage">
+            <field name="name">Contact Acquired</field>
+            <field name="team_id" ref="salesteam_us"/>
+            <field name="sequence">1</field>
         </record>
-        <record id="stage_us_qualified" model="crm.stage">
-            <field name="name">Contatto Qualificato</field>
-            <field name="team_id" ref="salesteam_us"></field>
+        <record id="stage_us_stage_2" model="crm.stage">
+            <field name="name">Qualified Contact</field>
+            <field name="team_id" ref="salesteam_us"/>
+            <field name="sequence">2</field>
         </record>
-        <record id="stage_us_firstmeeting" model="crm.stage">
-            <field name="name">Primo Meeting</field>
-            <field name="team_id" ref="salesteam_us"></field>
+        <record id="stage_us_stage_3" model="crm.stage">
+            <field name="name">First Meeting</field>
+            <field name="team_id" ref="salesteam_us"/>
+            <field name="sequence">3</field>
         </record>
-        <record id="stage_us_secondmeeting" model="crm.stage">
-            <field name="name">Secondo Meeting</field>
-            <field name="team_id" ref="salesteam_us"></field>
+        <record id="stage_us_stage_4" model="crm.stage">
+            <field name="name">Second Meeting</field>
+            <field name="team_id" ref="salesteam_us"/>
+            <field name="sequence">4</field>
         </record>
-        <record id="stage_us_evaluation" model="crm.stage">
-            <field name="name">Valutazione Caso Business</field>
-            <field name="team_id" ref="salesteam_us"></field>
+        <record id="stage_us_stage_5" model="crm.stage">
+            <field name="name">Evaluation Case Business</field>
+            <field name="team_id" ref="salesteam_us"/>
+            <field name="sequence">5</field>
         </record>
-        <record id="stage_us_oppwon" model="crm.stage">
-            <field name="name">Opportunita Vinta</field>
-            <field name="team_id" ref="salesteam_us"></field>
+        <record id="stage_us_stage_6" model="crm.stage">
+            <field name="name">Opportunity Won</field>
+            <field name="team_id" ref="salesteam_us"/>
+            <field name="is_won" eval="True"/>
+            <field name="fold" eval="False"/>
+            <field name="sequence">6</field>
         </record>
-        <record id="stage_us_opplost" model="crm.stage">
-            <field name="name">Opportunita Persa</field>
-            <field name="team_id" ref="salesteam_us"></field>
+        <record id="stage_us_stage_7" model="crm.stage">
+            <field name="name">Opportunity Lost</field>
+            <field name="team_id" ref="salesteam_us"/>
+            <field name="sequence">7</field>
         </record>
+        
     </data>
     
 </odoo>

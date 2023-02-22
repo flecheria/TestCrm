@@ -23,17 +23,18 @@
     'depends': [
         'base', 
         'sale_management', 
-        'crm'
+        'crm',
+        'account'
     ],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        # 'security/security.xml',
         'data/company.xml', 
         'data/salesteam.xml', 
         'data/stages.xml',
-        'views/quick_create_opportunity_form_ext.xml', 
-        'views/crm_lead_view_form_ext.xml'
+        'views/crm_lead_views.xml', 
     ],
 
     # only loaded in demonstration mode

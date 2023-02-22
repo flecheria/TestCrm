@@ -1,11 +1,34 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data noupdate="1">
-        <record id="company_test1" model="res.company">
+    <data noupdate="0">
+        <function model="ir.model.data" name="write">
+            <value model="ir.model.data" search="[('module', '=', 'base'), ('name', '=', 'main_company')]"/>
+            <value eval="{'noupdate': False}"/>
+        </function>
+        <record id="base.main_company" model="res.company">
             <field name="name">Fantasia 2</field>
+            <field name="country_id" ref="base.it"/>
         </record>
-        <record id="company_test2" model="res.company">
-            <field name="name">Bianca Casa</field>
+        <function model="ir.model.data" name="write">
+            <value model="ir.model.data" search="[('module', '=', 'base'), ('name', '=', 'main_company')]"/>
+            <value eval="{'noupdate': True}"/>
+        </function>
+        
+        <record id="company_blanca_casa" model="res.company">
+            <field name="name">Blanca Casa</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="company_verde_maggio" model="res.company">
+            <field name="name">Verde Maggio</field>
+            <field name="country_id" ref="base.it"/>
+        </record> 
+        <record id="company_max_enterprise" model="res.company"> 
+            <field name="name">Max Enterprise</field>
+            <field name="country_id" ref="base.us"/>
+        </record> 
+        <record id="company_barcamania" model="res.company"> 
+            <field name="name">Barcamania</field>
+            <field name="country_id" ref="base.it"/>
         </record>
     </data>
 </odoo>

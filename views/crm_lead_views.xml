@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- Quick Create From -->
+        <record id="quick_create_opportunity_form_inherit_test_crm" model="ir.ui.view">
+            <field name="name">crmtest.quick.create.opportunity.inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.quick_create_opportunity_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="market_id" domain="[('id', 'in', [%(base.it)d, %(base.us)d, %(base.ar)d])]" options="{'no_open': True, 'no_quick_create': True}"/>
+                    <field name="lead_company_id" options="{'no_open': True, 'no_quick_create': True}"/>
+                    <field name="product_ids" widget="many2many_tags" options="{'no_open': True, 'no_quick_create': True}"/>
+                </xpath>
+            </field>
+        </record>
+        
+        <!-- Normal From -->
+        <record id="crm_lead_view_form_inherit_test_crm" model="ir.ui.view">
+            <field name="name">crm.lead.form.inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page name="crmtest_neworder" string="Potenziale Ordine">
+                        <field name="product_ids" widget="many2many_tags" invisible="1"/>
+                        <field name="crm_order_line">
+                            <tree editable="bottom">
+                                <field name="product_id" />
+                                <field name="name"  />
+                                <field name="product_uom_qty" />
+                                <field name="price_unit" />
+                                <field
+                                        name="tax_id"
+                                        widget="many2many_tags"
+                                        options="{'no_create': True}"
+                                        domain="[('type_tax_use','=','sale'),('company_id','=',parent.company_id), ('country_id', '=', parent.country_id)]"
+                                        context="{'active_test': True}"
+                                        optional="show"
+                                    />
+                                <field name="lead_id" invisible="1" />
+                                <field name="discount"/>
+                                <field name="discount" string="Disc.%" groups="product.group_discount_per_so_line" optional="show" widget="product_discount"/>
+                                <field name="price_subtotal" widget="monetary" groups="account.group_show_line_subtotals_tax_excluded"/>
+                                <field name="price_total" widget="monetary" groups="account.group_show_line_subtotals_tax_included"/>
+                                <field name="currency_id" invisible="1"/>
+                                <field name="price_tax" invisible="1"/>
+                                <field name="company_id" invisible="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        
+        <!-- Portal Access Rules -->
+        <function model="ir.model.data" name="write">
+            <value model="ir.model.data" search="[('module', '=', 'crm'), ('name', '=', 'crm_lead_company_rule')]"/>
+            <value eval="{'noupdate': False}"/>
+        </function>
+
+        <record id="crm.crm_lead_company_rule" model="ir.rule">
+            <field name="domain_force">['|', '|',('company_id','=',False),('company_id', 'in', company_ids), ('market_id', '=', user.company_id.country_id.id)]</field>
+        </record>
+
+        <!-- Revoke noupdate change -->
+        <function model="ir.model.data" name="write">
+            <value model="ir.model.data" search="[('module', '=', 'crm'), ('name', '=', 'crm_lead_company_rule')]"/>
+            <value eval="{'noupdate': True}"/>
+        </function>
+
+    </data>
+</odoo>
